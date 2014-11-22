@@ -21,7 +21,7 @@ function e
         cat - > $tempfile
         emacs_client_or_server -e "(progn (find-file \"$tempfile\")
                                                     (set-visited-file-name nil)
-                                                    (rename-buffer \"*stdin*\"))
+                                                    (rename-buffer \"*stdin*\" t))
                                              " 2>&1 > /dev/null
     else
         emacs_client_or_server "$@"
