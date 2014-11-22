@@ -13,9 +13,9 @@ function e
 {
     # If the argument is - then write stdin to a tempfile and open the
     # tempfile.
-    if [[ $# -ge 1 ]] && [[ $1 == - ]]; then
-        tempfile=$(mktemp emacs-stdin-$USER.XXXXXXX --tmpdir)
-        cat - > $tempfile
+    if [[ $# -ge 1 ]] && [[ "$1" == - ]]; then
+        tempfile="$(mktemp emacs-stdin-$USER.XXXXXXX --tmpdir)"
+        cat - > "$tempfile"
         _emacsfun --eval "(progn (find-file \"$tempfile\")
                              (set-visited-file-name nil)
                              (rename-buffer \"*stdin*\" t))
