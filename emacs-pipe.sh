@@ -6,7 +6,8 @@
 # create the server itself (by setting -a '').
 function emacs_client_or_server
 {
-    emacsclient -c -n $@ -a 'false' || (\emacs --daemon && emacsclient -c -n $@)
+    emacsclient -c -n "$@" -a 'false' || \
+        (\emacs --daemon && emacsclient -c -n "$@")
 }
 
 # Emacsclient with ability to read from piped stdin.
@@ -23,6 +24,6 @@ function e
                                                     (rename-buffer \"*stdin*\"))
                                              " 2>&1 > /dev/null
     else
-        emacs_client_or_server $@
+        emacs_client_or_server "$@"
     fi
 }
