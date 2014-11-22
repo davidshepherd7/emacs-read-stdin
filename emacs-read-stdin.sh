@@ -13,7 +13,7 @@ function e
 {
     # If the argument is - then write stdin to a tempfile and open the
     # tempfile.
-    if [[ $1 == - ]]; then
+    if [[ $# -ge 1 ]] && [[ $1 == - ]]; then
         tempfile=$(mktemp emacs-stdin-$USER.XXXXXXX --tmpdir)
         cat - > $tempfile
         _emacsfun -e "(progn (find-file \"$tempfile\")
