@@ -18,8 +18,7 @@ function e
         cat - > "$tempfile"
         _emacsfun --eval "(find-file \"$tempfile\")" \
             --eval '(set-visited-file-name nil)' \
-            --eval '(rename-buffer "*stdin*" t))' \
-            2>&1 > /dev/null
+            --eval '(rename-buffer "*stdin*" t))'
     else
         _emacsfun "$@"
     fi
