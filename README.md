@@ -7,7 +7,7 @@ A simple shell function to allow emacsclients (or emacs) to read from stdin via 
 
 Tested with `zsh` and `bash`.
 
-To use `emacs` rather than `emacsclient` replace `emacs_client_or_server` by `emacs`.
+To use `emacs` rather than `emacsclient` change the `EMACSBIN` variable
 
 
 Set up
