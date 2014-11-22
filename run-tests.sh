@@ -14,7 +14,7 @@ set -o nounset
 
 
 # command to load the function and the mock for _emacsfun
-loadcmd=". $(pwd)/emacs-read-stdin.sh && . $(pwd)/test-mocks.sh"
+loadcmd="source $(pwd)/emacs-read-stdin.sh && source $(pwd)/test-mocks.sh"
 
 
 function test_pipe
