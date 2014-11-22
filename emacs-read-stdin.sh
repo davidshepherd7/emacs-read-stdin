@@ -16,7 +16,7 @@ function e
     if [[ $# -ge 1 ]] && [[ $1 == - ]]; then
         tempfile=$(mktemp emacs-stdin-$USER.XXXXXXX --tmpdir)
         cat - > $tempfile
-        _emacsfun -e "(progn (find-file \"$tempfile\")
+        _emacsfun --eval "(progn (find-file \"$tempfile\")
                              (set-visited-file-name nil)
                              (rename-buffer \"*stdin*\" t))
                  " 2>&1 > /dev/null
