@@ -4,7 +4,7 @@
 function _emacsfun
 {
     # Replace with `emacs` to not run as server/client
-    emacsclient -c -n $@
+    emacsclient -c -n "$@"
 }
 
 
