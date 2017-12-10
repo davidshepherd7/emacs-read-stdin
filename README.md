@@ -5,7 +5,7 @@ Read from stdin to emacs
 
 A simple shell function to allow emacsclients (or emacs) to read from stdin via a temp file.
 
-Tested with `zsh` and `bash`. `sh` is probably impossible to support because of the lack of the `[[ ]]` operator. Everything should work with other modern shells (there's nothing fancy going on).
+Tested with `zsh`, `bash` and `sh`. Everything should work with other modern shells (there's nothing fancy going on).
 
 To use `emacs` rather than `emacsclient`, or to modify the command line args used, change the `_emacsfun` function.
 
