@@ -7,31 +7,35 @@ set -o nounset
 
 # test zsh pipe
 # test bash pipe
+# test dash pipe
 # test zsh file
 # test bash file
+# test dash file
 
 # Missing lines are failures
 
 
 # command to load the function and the mock for _emacsfun
-loadcmd="source $(pwd)/emacs-read-stdin.sh && source $(pwd)/test-mocks.sh"
+loadcmd=". $(pwd)/emacs-read-stdin.sh && . $(pwd)/test-mocks.sh"
 
 
 function test_pipe
 {
     shell="$1"
     shift
-    $shell $@ -e -u -c "$loadcmd && echo test $shell pipe | e -"
+    $shell "$@" -e -u -c "$loadcmd && echo test $shell pipe | e -"
 }
 test_pipe zsh -f 
 test_pipe bash -norc
+test_pipe dash
 
 
 function test_file
 {
     shell="$1"
     shift
-    $shell $@ -e -u -c "$loadcmd && echo test $shell file > temp && e temp && rm temp"
+    $shell "$@" -e -u -c "$loadcmd && echo test $shell file > temp && e temp && rm temp"
 }
 test_file zsh -f
 test_file bash -norc
+test_file dash
