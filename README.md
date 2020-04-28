@@ -30,6 +30,10 @@ or as normal from files
 
     e hello_world.txt
 
+To read from stdin and open emacs in terminal mode
+
+    echo "hello world" | e -t
+
 Tests
 ------
 
